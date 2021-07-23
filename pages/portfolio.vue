@@ -7,7 +7,7 @@
         <v-card-title
           class="justify-center display-1 font-italic"
         >
-          Work
+          Portfolio
         </v-card-title>
         <v-row>
           <v-col
