@@ -3,8 +3,6 @@
     <Top />
     <v-divider />
     <Profile />
-    <Work />
-    <Contact />
   </div>
 </template>
 

@@ -1,68 +1,61 @@
 <template>
   <v-app v-cloak>
-    <v-app-bar app style="color: white">
-      <v-navigation-drawer
-        v-model="drawer"
-        absolute
-        temporary
-        app
-        width="150"
-        height="340">
-        <v-list class="pt-4">
-          <v-list-tile active-class="green--text" to="/">
-            <v-list-tile-content>
-              <v-list-tile-title>HOME</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile active-class="green--text" to="/resume">
-            <v-list-tile-content>
-              <v-list-tile-title>RESUME</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile active-class="green--text" to="/services">
-            <v-list-tile-content>
-              <v-list-tile-title>SERVICES</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile active-class="green--text" to="/portfolio">
-            <v-list-tile-content>
-              <v-list-tile-title>PORTFOLIO</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile active-class="green--text" to="/blog">
-            <v-list-tile-content>
-              <v-list-tile-title>BLOG</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile active-class="green--text" to="/contact">
-            <v-list-tile-content>
-              <v-list-tile-title>CONTACT</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-navigation-drawer>
-      <v-toolbar flat dense color="transparent" scroll-off-screen>
-        <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
-        <v-toolbar-title class="headline">
-          <span class="font-weight-light">Bruin</span>
-          <span class="indigo--text">Kuma</span>
-        </v-toolbar-title>
-        <v-spacer />
-        <v-btn @click="changeTheme" depressed small icon class="hidden-md-and-up">
-          <v-icon v-if="goDark==true">fas fa-sun</v-icon>
-          <v-icon v-else>fas fa-moon</v-icon>
+    <v-navigation-drawer v-model="drawer" app floating temporary>
+      <v-list-item>
+        <v-list-item-title class="title">
+          Menu
+        </v-list-item-title>
+      </v-list-item>
+      <v-divider />
+      <v-list nav>
+        <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
+          <v-list-item-icon>
+            <v-icon>{{ menu.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>{{ menu.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar app>
+      <!-- アプリケーションバー -->
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title class="headline">
+        <span class="font-weight-light">Bruin</span>
+        <span class="indigo--text">Kuma</span>
+      </v-toolbar-title>
+      <v-spacer />
+      <v-btn depressed small icon class="hidden-md-and-up" @click="changeTheme">
+        <v-icon v-if="goDark==true">
+          fas fa-sun
+        </v-icon>
+        <v-icon v-else>
+          fas fa-moon
+        </v-icon>
+      </v-btn>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn text to="/" active-class="indigo--text headline">
+          Home
         </v-btn>
-        <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn text to="/" active-class="indigo--text headline">Home</v-btn>
-          <v-btn text to="/resume" active-class="indigo--text headline">Resume</v-btn>
-          <v-btn text to="/portfolio" active-class="indigo--text headline">Portfolio</v-btn>
-          <v-btn text to="/contact" active-class="indigo--text headline">Contact</v-btn>
-          <v-btn @click="changeTheme" depressed small icon>
-            <v-icon v-if="goDark==true">fas fa-sun</v-icon>
-            <v-icon v-else>fas fa-moon</v-icon>
-          </v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
+        <v-btn text to="/resume" active-class="indigo--text headline">
+          Resume
+        </v-btn>
+        <v-btn text to="/portfolio" active-class="indigo--text headline">
+          Portfolio
+        </v-btn>
+        <v-btn text to="/contact" active-class="indigo--text headline">
+          Contact
+        </v-btn>
+        <v-btn depressed small icon @click="changeTheme">
+          <v-icon v-if="goDark==true">
+            fas fa-sun
+          </v-icon>
+          <v-icon v-else>
+            fas fa-moon
+          </v-icon>
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
 
     <v-main fluid>
@@ -78,9 +71,25 @@
 
 <script>
 export default {
+  props: {
+    goDark: {
+      type: Boolean
+    }
+  },
   data () {
     return {
-      drawer: null
+      drawer: false,
+      menus: [
+        { title: 'HOME', icon: 'fas fa-home', url: '/' },
+        { title: 'RESUME', icon: 'fas fa-address-card', url: '/resume' },
+        { title: 'PORTFOLIO', icon: 'fas fa-heart', url: '/portfolio' },
+        { title: 'CONTACT', icon: 'fas fa-envelope', url: '/contact' }
+      ]
+    }
+  },
+  methods: {
+    changeTheme () {
+      this.$emit('changeTheme', this.goDark)
     }
   }
 }
