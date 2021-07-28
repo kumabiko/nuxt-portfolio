@@ -6,7 +6,7 @@ export default {
     titleTemplate: '%s - nuxt-portfolio',
     title: 'nuxt-portfolio',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
