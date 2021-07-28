@@ -26,14 +26,6 @@
         <span class="indigo--text">Kuma</span>
       </v-toolbar-title>
       <v-spacer />
-      <v-btn depressed small icon class="hidden-md-and-up" @click="changeTheme">
-        <v-icon v-if="goDark==true">
-          fas fa-sun
-        </v-icon>
-        <v-icon v-else>
-          fas fa-moon
-        </v-icon>
-      </v-btn>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn text to="/" active-class="indigo--text headline">
           Home
@@ -87,9 +79,20 @@ export default {
       ]
     }
   },
+  mounted () {
+    const theme = localStorage.getItem('useDarkTheme')
+    if (theme) {
+      if (theme === 'true') {
+        this.$vuetify.theme.dark = true
+      } else {
+        this.$vuetify.theme.dark = false
+      }
+    }
+  },
   methods: {
     changeTheme () {
-      this.$emit('changeTheme', this.goDark)
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      localStorage.setItem('useDarkTheme', this.$vuetify.theme.dark.toString())
     }
   }
 }
