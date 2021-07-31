@@ -13,39 +13,21 @@
             <p>Hello World!</p>
           </v-img>
         </v-card>
-        <v-card-actions class="hidden-sm-and-down">
-          <v-btn
-            v-for="icon in icons"
-            :key="icon.icon"
-            fab
-            dark
-            outlined
-            color="indigo"
-            :href="icon.href"
-            target="_blank"
-          >
-            <v-icon dark>
-              {{ icon.icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-actions>
-
-        <v-card-actions class="hidden-md-and-up justify-center">
-          <v-btn
-            v-for="icon in icons"
-            :key="icon.icon"
-            fab
-            dark
-            outlined
-            color="indigo"
-            :href="icon.href"
-            target="_blank"
-          >
-            <v-icon dark>
-              {{ icon.icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-actions>
+        <v-card flat color="transparent" max-width="500">
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0">
+                <span>About Me</span>
+              </h3>
+              <div>
+                <p>
+                  Hello! I'm a front-end enginner.<br>
+                  I'm interensted in <span class="indigo--text">Design</span> and <span class="indigo--text">Idea</span>.
+                </p>
+              </div>
+            </div>
+          </v-card-title>
+        </v-card>
       </v-layout>
     </v-container>
   </div>
@@ -55,20 +37,6 @@
 export default {
   data () {
     return {
-      icons: [
-        {
-          href: 'https://github.com/39O44O',
-          icon: 'fab fa-github'
-        },
-        {
-          href: 'https://twitter.com/BruinKuma',
-          icon: 'fab fa-twitter'
-        },
-        {
-          href: 'https://bruinkuma.hatenablog.com',
-          icon: 'fas fa-blog'
-        }
-      ]
     }
   }
 }
