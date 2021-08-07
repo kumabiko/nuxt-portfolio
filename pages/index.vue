@@ -2,18 +2,18 @@
   <div>
     <Top />
     <v-divider />
-    <Profile />
+    <About />
   </div>
 </template>
 
 <script>
 import Top from '~/components/Top.vue'
-import Profile from '~/components/Profile.vue'
+import About from '~/components/About.vue'
 
 export default {
   components: {
     Top,
-    Profile
+    About
   }
 }
 </script>

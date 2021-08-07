@@ -13,21 +13,6 @@
             <p>Hello World!</p>
           </v-img>
         </v-card>
-        <v-card flat color="transparent" max-width="500">
-          <v-card-title primary-title>
-            <div>
-              <h3 class="headline mb-0">
-                <span>About Me</span>
-              </h3>
-              <div>
-                <p>
-                  Hello! I'm a front-end enginner.<br>
-                  I'm interensted in <span class="indigo--text">Design</span> and <span class="indigo--text">Idea</span>.
-                </p>
-              </div>
-            </div>
-          </v-card-title>
-        </v-card>
       </v-layout>
     </v-container>
   </div>
