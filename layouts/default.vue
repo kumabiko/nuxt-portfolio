@@ -2,11 +2,18 @@
   <v-app v-cloak>
     <!-- ナビゲーションドロワー -->
     <v-navigation-drawer v-model="drawer" app floating temporary>
-      <v-list-item>
-        <v-list-item-title class="title">
-          Menu
-        </v-list-item-title>
-      </v-list-item>
+      <v-layout column align-center>
+        <v-flex mt-5>
+          <v-avatar
+            size="100"
+          >
+            <v-img src="/image/bear_icon.png" />
+          </v-avatar>
+          <p class="mt-1 text-center">
+            BruinKuma
+          </p>
+        </v-flex>
+      </v-layout>
       <v-divider />
       <v-list nav>
         <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
@@ -49,11 +56,11 @@
           Contact
         </v-btn>
         <v-btn depressed small icon @click="changeTheme">
-          <v-icon v-if="$vuetify.theme.dark==true">
-            fas fa-sun
+          <v-icon v-if="goDark==true">
+            fas fa-moon
           </v-icon>
           <v-icon v-else>
-            fas fa-moon
+            fas fa-sun
           </v-icon>
         </v-btn>
       </v-toolbar-items>
@@ -146,6 +153,8 @@ export default {
     changeTheme () {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
       localStorage.setItem('useDarkTheme', this.$vuetify.theme.dark.toString())
+      // eslint-disable-next-line vue/no-mutating-props
+      this.goDark = !this.goDark
     }
   }
 }
