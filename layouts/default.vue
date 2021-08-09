@@ -26,12 +26,12 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <!-- アプリケーションバー -->
     <v-app-bar app>
-      <!-- アプリケーションバー -->
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title class="headline">
         <span class="font-weight-light">Bruin</span>
-        <span class="indigo--text">Kuma</span>
+        <span class="primary--text">Kuma</span>
       </v-toolbar-title>
       <v-spacer />
       <v-btn depressed small icon class="hidden-md-and-up" @click="changeTheme">
@@ -43,16 +43,16 @@
         </v-icon>
       </v-btn>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text to="/" active-class="indigo--text headline">
+        <v-btn text to="/" active-class="primary--text headline">
           Home
         </v-btn>
-        <v-btn text to="/resume" active-class="indigo--text headline">
+        <v-btn text to="/resume" active-class="primary--text headline">
           Resume
         </v-btn>
-        <v-btn text to="/portfolio" active-class="indigo--text headline">
+        <v-btn text to="/portfolio" active-class="primary--text headline">
           Portfolio
         </v-btn>
-        <v-btn text to="/contact" active-class="indigo--text headline">
+        <v-btn text to="/contact" active-class="primary--text headline">
           Contact
         </v-btn>
         <v-btn depressed small icon @click="changeTheme">
@@ -66,8 +66,20 @@
       </v-toolbar-items>
     </v-app-bar>
 
-    <v-main fluid>
-      <nuxt />
+    <v-main>
+      <v-container fluid>
+        <v-row>
+          <v-col cols="12" md="3">
+            <!-- レフトサイドバー -->
+          </v-col>
+          <v-col cols="12" md="6">
+            <nuxt />
+          </v-col>
+          <v-col cols="12" md="3">
+            <!-- ライトサイドバー -->
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
 
     <v-footer
@@ -78,7 +90,7 @@
         tile
         width="100%"
         class="text-center"
-        color="#0F4C81"
+        color="primary"
       >
         <v-card-text>
           <v-btn

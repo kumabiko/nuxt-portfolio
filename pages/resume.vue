@@ -1,62 +1,44 @@
 <template>
   <div id="profile">
-    <v-main fluid>
-      <v-card
-        width="100vw"
+    <v-container>
+      <h2
+        class="pa-5 text-center"
       >
-        <v-card-title
-          class="pa-5 justify-center display-1 font-italic"
-        >
-          自己紹介
-        </v-card-title>
+        経歴
+      </h2>
 
-        <v-row
-          justify="center"
-          align-content="center"
+      <v-timeline
+        :dense="$vuetify.breakpoint.smAndDown"
+      >
+        <v-timeline-item
+          v-for="(year, i) in years"
+          :key="i"
+          :color="year.color"
+          :icon="year.icon"
+          fill-dot
         >
-          <v-col
-            cols="12"
-            sm="5"
-            md="5"
-            align="center"
-          >
-            <v-row
-              justify="space-around"
-              align-content="center"
-              style="height:100%"
-            >
-              <v-avatar
-                width="20vW"
-                height="auto"
+          <template #opposite>
+            <span
+              :class="`headline font-weight-bold ${year.color}--text`"
+              v-text="year.year"
+            />
+          </template>
+          <v-card class="rounded-xl">
+            <v-card-title>
+              <span
+                justify-center
+                :class="`${year.color}--text`"
               >
-                <img
-                  src="/image/bear_icon.png"
-                  alt="PROFILE"
-                  style="object-fit: cover;"
-                >
-              </v-avatar>
-            </v-row>
-          </v-col>
-          <v-col
-            cols="12"
-            sm="6"
-            md="6"
-          >
-            <!-- プロフィール項目の表示 -->
-            <v-list>
-              <v-list-item
-                v-for="profile in profiles"
-                :key="profile.content"
-              >
-                <v-list-item-content>
-                  <v-list-item-title><v-icon>mdi-check</v-icon> {{ profile.content }}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-main>
+                {{ year.title }}
+              </span>
+            </v-card-title>
+            <v-card-text>
+              {{ year.content }}
+            </v-card-text>
+          </v-card>
+        </v-timeline-item>
+      </v-timeline>
+    </v-container>
   </div>
 </template>
 <script>
@@ -72,6 +54,36 @@ export default {
       { content: '趣味' },
       { content: '特技' },
       { content: 'その他' }
+    ],
+    years: [
+      {
+        color: 'primary',
+        icon: 'mdi-school',
+        year: '2020',
+        title: '立命館大学経済学部 卒業',
+        content: ''
+      },
+      {
+        color: 'primary',
+        icon: 'mdi-office-building',
+        year: '2020',
+        title: '某SIer システムエンジニア',
+        content: '金融系の大規模システムの保守・運用の業務に従事'
+      },
+      {
+        color: 'primary',
+        icon: 'mdi-office-building-outline',
+        year: '2021',
+        title: '某IT企業 フロントエンジニア',
+        content: '自社開発サービスの事業部で、フロントエンドエンジニアとして従事'
+      },
+      {
+        color: 'primary',
+        icon: 'mdi-calendar-question',
+        year: '20✖️✖️',
+        title: 'デザインエンジニア',
+        content: 'エンジニアリングとデザインの両立を図る働き方を目指しています。'
+      }
     ]
   })
 }
