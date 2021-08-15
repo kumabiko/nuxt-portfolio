@@ -2,9 +2,9 @@
   <div id="profile">
     <v-container>
       <h2
-        class="pa-5 text-center"
+        class="pa-5 text-center primary--text"
       >
-        経歴
+        Resume
       </h2>
 
       <v-timeline
@@ -44,17 +44,6 @@
 <script>
 export default {
   data: () => ({
-    profiles: [
-      { content: '名前' },
-      { content: '生年月日' },
-      { content: '出身地' },
-      { content: '出身大学' },
-      { content: '職業' },
-      { content: '資格' },
-      { content: '趣味' },
-      { content: '特技' },
-      { content: 'その他' }
-    ],
     years: [
       {
         color: 'primary',
@@ -80,7 +69,7 @@ export default {
       {
         color: 'primary',
         icon: 'mdi-calendar-question',
-        year: '20✖️✖️',
+        year: '20XX',
         title: 'デザインエンジニア',
         content: 'エンジニアリングとデザインの両立を図る働き方を目指しています。'
       }
