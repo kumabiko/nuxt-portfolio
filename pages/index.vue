@@ -2,24 +2,18 @@
   <div>
     <Top />
     <v-divider />
-    <Profile />
-    <Work />
-    <Contact />
+    <About />
   </div>
 </template>
 
 <script>
 import Top from '~/components/Top.vue'
-import Profile from '~/components/Profile.vue'
-import Work from '~/components/Work.vue'
-import Contact from '~/components/Contact.vue'
+import About from '~/components/About.vue'
 
 export default {
   components: {
     Top,
-    Profile,
-    Work,
-    Contact
+    About
   }
 }
 </script>

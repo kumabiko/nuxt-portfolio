@@ -1,6 +1,6 @@
 <template>
   <div id="top">
-    <v-container fluid>
+    <v-layout column justify-center align-center class="mt-4 pt-2">
       <v-card
         width="100vw"
       >
@@ -9,9 +9,20 @@
           :class="{'headline': $vuetify.breakpoint. smAndDown, 'display-1': $vuetify.breakpoint. mdAndUp}"
           src="/image/hans-jurgen-mager-qQWV91TTBrE-unsplash.jpg"
         >
-          <p>Sample Portfolio</p>
+          <p>Hello World!</p>
         </v-img>
       </v-card>
-    </v-container>
+    </v-layout>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+    }
+  }
+}
+</script>
+<style>
+</style>

@@ -88,3 +88,9 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# 2021/08/09
+plant.vue
+
+# 2021/08/15
+work.vue
