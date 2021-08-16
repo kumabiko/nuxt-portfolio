@@ -9,8 +9,8 @@
           >
             <v-img src="/image/bear_icon.png" />
           </v-avatar>
-          <p class="mt-1 text-center">
-            BruinKuma
+          <p class="mt-2 text-center">
+            くまろー
           </p>
         </v-flex>
       </v-layout>
@@ -30,8 +30,8 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title class="headline">
+        <span class="primary--text">Cool</span>
         <span class="font-weight-light">Bruin</span>
-        <span class="primary--text">Kuma</span>
       </v-toolbar-title>
       <v-spacer />
       <v-btn depressed small icon class="hidden-md-and-up" @click="changeTheme">
@@ -43,16 +43,16 @@
         </v-icon>
       </v-btn>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text to="/" active-class="primary--text headline">
+        <v-btn text to="/" active-class="primary--text">
           Home
         </v-btn>
-        <v-btn text to="/resume" active-class="primary--text headline">
+        <v-btn text to="/resume" active-class="primary--text">
           Resume
         </v-btn>
-        <v-btn text to="/portfolio" active-class="primary--text headline">
+        <v-btn text to="/portfolio" active-class="primary--text">
           Portfolio
         </v-btn>
-        <v-btn text to="/contact" active-class="primary--text headline">
+        <v-btn text to="/contact" active-class="primary--text">
           Contact
         </v-btn>
         <v-btn depressed small icon @click="changeTheme">
@@ -137,11 +137,11 @@ export default {
       ],
       icons: [
         {
-          href: 'https://github.com/39O44O',
+          href: 'https://github.com/coolbruin',
           icon: 'fab fa-github'
         },
         {
-          href: 'https://twitter.com/BruinKuma',
+          href: 'https://twitter.com/coolbruin',
           icon: 'fab fa-twitter'
         },
         {
