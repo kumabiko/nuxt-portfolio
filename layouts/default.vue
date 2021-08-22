@@ -112,7 +112,7 @@
         <v-divider />
 
         <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>&copy;BruinKuma</strong>
+          {{ new Date().getFullYear() }} — <strong>&copy;coolbruin</strong>
         </v-card-text>
       </v-card>
     </v-footer>
