@@ -29,7 +29,10 @@
     <!-- アプリケーションバー -->
     <v-app-bar app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title class="headline">
+      <v-spacer
+        class="hidden-md-and-up"
+      />
+      <v-toolbar-title center class="headline">
         <span class="primary--text">Cool</span>
         <span class="font-weight-light">Bruin</span>
       </v-toolbar-title>

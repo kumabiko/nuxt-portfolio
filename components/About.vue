@@ -3,7 +3,7 @@
     <div class="py-12" />
 
     <v-container class="text-center">
-      <h2 class="display-2 font-weight-bold mb-3">
+      <h2 class="display-1 font-weight-bold mb-3">
         ABOUT ME
       </h2>
 
@@ -27,14 +27,13 @@
         <span>くまろー</span>
       </h3>
 
-      <v-responsive
-        class="mx-auto title font-weight-light mb-8"
-        max-width="720"
-      >
-        フロントエンドエンジニア。都内のIT企業勤務。<br>
-        金融系SEから自社開発サービスのWebエンジニアに転職。<br>
-        サービス開発やUI/UXに興味があり、現在勉強中。
-      </v-responsive>
+      <div>
+        <p>
+          フロントエンドエンジニア<br>
+          金融系のSEから自社サービス開発のWebエンジニアに転職<br>
+          デザインとアイデアを広げる事が好きです。
+        </p>
+      </div>
 
       <div />
 
