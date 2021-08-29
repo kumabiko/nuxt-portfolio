@@ -110,16 +110,16 @@ export default {
         {
           dialog: false,
           title: 'This Site',
-          image: '/image/portfolio/PortfolioSite.png',
+          image: '/image/portfolio/portfolio.png',
           tags: [
             { tag: '#Nuxt.js' },
             { tag: '#Vue.js' },
             { tag: '#Vuetify' },
             { tag: '#Vercel' }
           ],
-          description: 'ポートフォリオ用のサイトです。UIデザインを参考にしながら作成しました。',
+          description: 'ポートフォリオ用のサイトです。UIデザインを参考にしながら作成しました。Vuetifyでレスポンシブ・ダークテーマに対応しています。',
           year: '2021年7月~8月',
-          url: ''
+          url: 'https://nuxt-portfolio-lyart.vercel.app/'
         },
         {
           dialog: false,

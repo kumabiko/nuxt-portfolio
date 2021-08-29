@@ -71,7 +71,7 @@ export default {
         icon: 'mdi-calendar-question',
         year: '20XX',
         title: 'デザインエンジニア',
-        content: 'エンジニアリングとデザインの両立を図る働き方を目指しています。'
+        content: 'エンジニアとデザイナーの両方の価値観をもって、ものづくりを行う。'
       }
     ]
   })
