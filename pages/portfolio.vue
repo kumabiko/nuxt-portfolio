@@ -110,7 +110,7 @@ export default {
         {
           dialog: false,
           title: 'This Site',
-          image: '/image/portfolio/PortfolioSite.png',
+          image: '/image/portfolio/portfolio.png',
           tags: [
             { tag: '#Nuxt.js' },
             { tag: '#Vue.js' },
